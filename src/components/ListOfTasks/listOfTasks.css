@@ -1,0 +1,7 @@
+.tasks {
+    width: 100%;
+}
+
+.done-tasks p {
+    color: rgb(80, 80, 80)
+}

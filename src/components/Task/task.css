@@ -1,0 +1,47 @@
+
+.task {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition-duration: 300ms;
+    border: 1px solid #00000000;
+}
+
+.task:hover {
+    border-bottom: 1px solid #dddddd;
+}
+
+.task p {
+    border: 1px solid #00000000;
+    transition-duration: 300ms;
+}
+
+/* .task p:hover {
+    border-bottom: 1px solid #dddddd;
+} */
+
+.done-icon {
+    width: 30px;
+}
+
+.close-icon {
+    width: 30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.buttons button {
+    display: flex;
+    padding: 2px;
+    background: #b1b1b1;
+    border-radius: 25px;
+    border: 1px solid #b1b1b1;
+}
+
+.buttons button:hover {
+    border: 1px solid #2b2b2b;
+}

@@ -1,0 +1,16 @@
+.filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+}
+
+.filters button {
+    font-weight: 600;
+    letter-spacing: 1px;
+    outline: none;
+}
+
+.filters button.active {
+    border: 1px solid #ffffff;
+}
+
