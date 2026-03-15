@@ -1,7 +1,7 @@
 
 
 export type TaskType = {
-  id: number,
+  readonly id: number,
   title: string,
   completed: boolean,
   priority: 'low' | 'medium' | 'high',

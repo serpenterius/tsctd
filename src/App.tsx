@@ -17,6 +17,7 @@ function App() {
     return data
   });
   const [filter, setFilter] = useState<FilterType>('all');
+  let nextId: number = 0;
 
 
   function saveData(data: TaskType[]) {
@@ -24,20 +25,23 @@ function App() {
     localStorage.setItem('tasks', JSON.stringify(data));
   }
 
-  function onHandleAdd() {
+  function onHandleAdd(): void {
     if(input.trim() === '') return
     const newTask: TaskType = {
-      id: Date.now(),
+      id: nextId,
       title: input,
       completed: false,
       priority: 'low',
       createdAt: new Date().toDateString()
     }
-    setInput('');
-    saveData([...tasks, newTask]);
+    nextId++;
+
+    console.log(newTask);
+    // setInput('');
+    // saveData([...tasks, newTask]);
   }
 
-  function onHandleChange(e: React.ChangeEvent<HTMLInputElement>) {
+  function onHandleChange(e: React.ChangeEvent<HTMLInputElement>): void {
     setInput(e.target.value);
   }
 
