@@ -17,7 +17,7 @@ function App() {
     return data
   });
   const [filter, setFilter] = useState<FilterType>('all');
-  let nextId: number = 0;
+  const [nextId, setNextId] = useState<number>(0);
 
 
   function saveData(data: TaskType[]) {
@@ -34,11 +34,10 @@ function App() {
       priority: 'low',
       createdAt: new Date().toDateString()
     }
-    nextId++;
-
-    console.log(newTask);
-    // setInput('');
-    // saveData([...tasks, newTask]);
+    
+    setNextId(prev => prev + 1);
+    setInput('');
+    saveData([...tasks, newTask]);
   }
 
   function onHandleChange(e: React.ChangeEvent<HTMLInputElement>): void {
@@ -64,7 +63,6 @@ function App() {
     setFilter(value);
     console.log(value);
   }
-
 
 
 
