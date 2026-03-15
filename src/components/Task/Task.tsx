@@ -1,5 +1,7 @@
 import './task.css'
 
+import { useState } from 'react'
+
 import closeIcon from '../../assets/close-round-svgrepo-com.svg'
 import doneIcon from '../../assets/done-svgrepo-com.svg'
 
@@ -12,6 +14,7 @@ type Props = {
 }
 
 export function Task({onDelete, onComplete, text, id, completed}: Props) {
+    const [focus, setFocus] = useState<boolean>(false)
 
     const doneButton = (
         <button onClick={() => onComplete(id)} >
@@ -26,13 +29,18 @@ export function Task({onDelete, onComplete, text, id, completed}: Props) {
     )
 
 
-    return (
-        <div className="task">
+
+    const render = (
+        <div className="task" onMouseEnter={() => setFocus(true)}>
             <p>{text}</p>
-            <div className="buttons">
+            <div className={focus ? 'buttons active' : 'buttons'}>
                 {completed === false ? doneButton : null}
                 {closeButton}
             </div>
-        </div>
+        </div>   
+    )
+
+    return (
+        {...render}
     )
 }

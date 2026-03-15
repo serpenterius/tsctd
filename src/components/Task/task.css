@@ -12,6 +12,10 @@
     border-bottom: 1px solid #dddddd;
 }
 
+.task:hover .buttons {
+    opacity: 1;
+}
+
 .task p {
     border: 1px solid #00000000;
     transition-duration: 300ms;
@@ -32,7 +36,14 @@
 .buttons {
     display: flex;
     gap: 8px;
+    opacity: 0;
+    transition-duration: 300ms;
+
 }
+
+/* .buttons.active {
+    display: flex;
+} */
 
 .buttons button {
     display: flex;
